@@ -9,31 +9,34 @@
             font-family: Poppins, sans-serif;
             background: linear-gradient(to bottom right, #0119ad, #000839);
             color: #333;
-            padding: 350px;
+            padding: 20px;
             text-align: center;
+            margin: 0;
         }
         h1 {
             color: #ffffff;
+            font-size: 2rem;
         }
         h2 {
             color: #0119ad;
+            font-size: 1.5rem;
         }
         form {
             background-color: #fff;
             border-radius: 20px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            padding: 50px;
-            max-width: 1200px;
-            margin: 30px auto;
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
             text-align: left;
         }
         label {
             display: block;
             margin-bottom: 8px;
-            font-weight: SemiBold;
+            font-weight: 600;
             color: #333;
         }
-        input[type="text"], input[type="email"], input[type="number"], select, textarea {
+        input[type="text"], input[type="email"], input[type="number"], select, textarea, input[type="date"], input[type="time"] {
             width: 100%;
             padding: 10px;
             margin-bottom: 15px;
@@ -44,8 +47,8 @@
             background-color: #0119ad;
             border: none;
             color: #fff;
-            padding: 15px 32px;
-            font-size: 30px;
+            padding: 15px;
+            font-size: 1rem;
             cursor: pointer;
             border-radius: 5px;
             width: 100%;
@@ -54,58 +57,49 @@
         .submit-btn:hover {
             background-color: #e6b800;
         }
-        .checkbox-label {
-            display: block;
-            margin-top: 10px;
-        }
         .header-image {
             width: 100%;
             height: auto;
-            max-width: 918px;
+            max-width: 750px;
             margin-bottom: 20px;
-        }
-        .payment-methods {
-            text-align: left;
-            font-size: 14px;
-            margin-bottom: 20px;
+            border: 5px solid white;
+            border-radius: 15px;
         }
 
         /* Responsive Styles */
-        @media only screen and (max-width: 600px) {
+        @media only screen and (max-width: 768px) {
             body {
                 padding: 10px;
             }
+            h1, h2 {
+                font-size: 1.5rem;
+            }
             form {
                 padding: 15px;
-                margin: 20px auto;
-            }
-            h1, h2 {
-                font-size: 20px;
-            }
-            input[type="text"], input[type="email"], input[type="number"], select, textarea {
-                font-size: 14px;
-                padding: 8px;
             }
             .submit-btn {
-                padding: 12px 24px;
-                font-size: 14px;
+                font-size: 0.875rem;
+                padding: 10px;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            h1, h2 {
+                font-size: 1.2rem;
             }
         }
     </style>
 </head>
 <body>
-<img src="https://github.com/MaameT-1/ismart-volunteering-forms/blob/main/ismart.jpg?raw=true" alt="A beautiful example image" style="width:750px; height:auto; border:5px solid white; border-radius:15px;" />
+    <img src="https://github.com/MaameT-1/ismart-volunteering-forms/blob/main/ismart.jpg?raw=true" alt="Institute Logo" class="header-image">
     <h1>INSTITUTE OF SEXUALITY, MARRIAGE, AND FAMILY LIFE RESEARCH AND TRAINING (iSMART)</h1>
     <h1>KINDLY FILL THIS VOLUNTEER RECRUITMENT FORM.</h1>
-    <h1>For any support or assistance kindly WhatsApp 0271467767 (Please do not call this number).</h1>
+    <h1>For any support or assistance, kindly WhatsApp 0271467767 (Please do not call this number).</h1>
 
     <form id="registrationForm" action="https://formspree.io/f/xrbgvdvl" method="POST">
-        
-
-<h2>Personal Information.</h2>
+        <h2>Personal Information</h2>
         <label for="title">Title:</label>
         <select id="title" name="title" required>
-            <option value="Please select">Please select</option>
+            <option value="">Please select</option>
             <option value="Miss">Miss</option>
             <option value="Mr">Mr</option>
             <option value="Mrs">Mrs</option>
@@ -113,93 +107,69 @@
             <option value="Rev">Rev</option>
             <option value="Prof">Prof</option>
         </select>
-        <label for="name">First Name:</label>
-        <input type="text" id="name" name="name" required>
 
-        <label for="name">Surname:</label>
-        <input type="text" id="name" name="name" required>
+        <label for="first-name">First Name:</label>
+        <input type="text" id="first-name" name="first_name" required>
 
-        <label for="name">Middle/Other Names:</label>
-        <input type="text" id="name" name="name" required>
+        <label for="surname">Surname:</label>
+        <input type="text" id="surname" name="surname" required>
 
-        <label for="email">Date of Birth (optional):</label>
-        <input type="date" id="date" name="date">
-<h2> </h2>
+        <label for="middle-names">Middle/Other Names:</label>
+        <input type="text" id="middle-names" name="middle_names">
+
+        <label for="dob">Date of Birth (optional):</label>
+        <input type="date" id="dob" name="dob">
+
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
 
-        <label for="whatsapp">Mobile Number:</label>
-        <input type="text" id="whatsapp" name="whatsapp" required>
+        <label for="phone">Mobile Number:</label>
+        <input type="text" id="phone" name="phone" required>
 
-        <label for="name">Residential Address (City, District, Region e.g., Santa Maria, Ga Central, Greater Accra):</label>
-        <input type="text" id="name" name="name" required>
+        <label for="address">Residential Address:</label>
+        <input type="text" id="address" name="address" required>
 
-        <label for="age-range">Highest Level of Education :</label>
-        <select id="age-range" name="age-range" required>
-            <option value="Please select">Please select</option>
-            <option value="Junior High School">Junior High School</option>
-            <option value="Senior High School">Senior High School</option>
-            <option value="Undergraduate (BSc, HND, Diploma)">Undergraduate (BSc, HND, Diploma)</option>
-            <option value="Postgraduate (MSc, MPhil)">Postgraduate (MSc, MPhil)</option>
-            <option value="Doctorate Degree (PhD)">Doctorate Degree (PhD)</option>
-        </select>
-<h2>Employment</h2>
-        <label for="age-range">Employment Satus :</label>
-        <select id="age-range" name="age-range" required>
-            <option value="Please select">Please select</option>
-            <option value="Junior High School">Employed</option>
-            <option value="Senior High School">Self Employed</option>
-            <option value="Undergraduate (BSc, HND, Diploma)">Not Employed</option>
-            <option value="Postgraduate (MSc, MPhil)">Currently Schooling</option>
-        </select>
-<h2>Volunteer Information</h2>
-
-        <label for="age-range">Areas of Interest:</label>
-        <select id="age-range" name="age-range" required>
-            <option value="Please select">Please select</option>
-            <option value="Junior High School">Research Assistance</option>
-            <option value="Senior High School">Community Outreach and Education</option>
-            <option value="Undergraduate (BSc, HND, Diploma)">Training Program Facilitation or Support</option>
-            <option value="Postgraduate (MSc, MPhil)">Event Organization and Coordination</option>
-            <option value="Undergraduate (BSc, HND, Diploma)">Administrative and Office Support</option>
-            <option value="Postgraduate (MSc, MPhil)">Content Creation (e.g., writing, media, digital content)</option>
-            <option value="Postgraduate (MSc, MPhil)">Other (please specify):</option>
-        </select>
-            <input type="text" id="name" name="name" required>
-<h2>Availability</h2>
-
-        <label for="age-range">Preferred days for volunteering:</label>
-        <select id="age-range" name="age-range" required>
-            <option value="Please select">Please select</option>
-            <option value="Junior High School">Weekdays (specify days):</option>
-            <option value="Senior High School">Weekends (specify day):</option>
-        </select>
-        <input type="text" id="name" name="name" required>
-
-        <label for="email">Preferred hours:</label>
-        <input type="time" id="time" name="time">
-<h2> </h2>
-
-<label for="name">What motivates you to volunteer?(open-ended response):</label>
-        <input type="text" id="name" name="name">
-
-<h2>Relevant Skills or Experience</h2>
-
-<label for="name">Briefly describe any certifications, training, or work experience that aligns with the mission of the institute:</label>
-        <input type="text" id="name" name="name">
-
-<h2>Interest in Training Opportunities</h2>
-
-        <label for="age-range">Would you be interested in receiving training or skill development as part of your volunteer role?:</label>
-        <select id="age-range" name="age-range" required>
-            <option value="Please select">Please select</option>
-            <option value="Junior High School">Yes:</option>
-            <option value="Senior High School">No:</option>
+        <h2>Employment</h2>
+        <label for="employment-status">Employment Status:</label>
+        <select id="employment-status" name="employment_status" required>
+            <option value="">Please select</option>
+            <option value="Employed">Employed</option>
+            <option value="Self Employed">Self Employed</option>
+            <option value="Unemployed">Unemployed</option>
+            <option value="Student">Currently Schooling</option>
         </select>
 
-<label for="name">If yes, specify areas of interest (e.g., data analysis, public speaking):</label>
-        <input type="text" id="name" name="name">
+        <h2>Volunteer Information</h2>
+        <label for="areas-of-interest">Areas of Interest:</label>
+        <select id="areas-of-interest" name="areas_of_interest" required>
+            <option value="">Please select</option>
+            <option value="Research Assistance">Research Assistance</option>
+            <option value="Community Outreach">Community Outreach and Education</option>
+            <option value="Training Program">Training Program Facilitation or Support</option>
+            <option value="Event Organization">Event Organization and Coordination</option>
+            <option value="Administrative Support">Administrative and Office Support</option>
+            <option value="Content Creation">Content Creation</option>
+        </select>
 
+        <label for="availability">Preferred days for volunteering:</label>
+        <input type="text" id="availability" name="availability" required>
+
+        <label for="preferred-hours">Preferred hours:</label>
+        <input type="time" id="preferred-hours" name="preferred_hours">
+
+        <label for="motivation">What motivates you to volunteer?</label>
+        <textarea id="motivation" name="motivation"></textarea>
+
+        <h2>Interest in Training Opportunities</h2>
+        <label for="training-interest">Would you be interested in training?:</label>
+        <select id="training-interest" name="training_interest" required>
+            <option value="">Please select</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+
+        <label for="training-specify">If yes, specify areas of interest:</label>
+        <textarea id="training-specify" name="training_specify"></textarea>
 
         <button type="submit" class="submit-btn">Submit</button>
         <div id="formMessage"></div>
@@ -207,10 +177,9 @@
 
     <script>
         document.getElementById('registrationForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Stop default form submission
-
-            var form = this;
-            var formData = new FormData(form);
+            event.preventDefault();
+            const form = this;
+            const formData = new FormData(form);
 
             fetch(form.action, {
                 method: 'POST',
@@ -219,26 +188,21 @@
                     'Accept': 'application/json'
                 }
             }).then(response => {
+                const message = document.getElementById('formMessage');
                 if (response.ok) {
-                    document.getElementById('formMessage').style.display = 'block';
-                    document.getElementById('formMessage').textContent = 'Registration successful! Redirecting...';
-                    document.getElementById('formMessage').style.color = 'green';
-
-                    setTimeout(function() {
-                        window.location.href = 'https://chat.whatsapp.com/F5YWuRVqm0O6D2HqOVgqV9';
-                    }, 2000);
+                    message.textContent = 'Registration successful! Redirecting...';
+                    message.style.color = 'green';
+                    setTimeout(() => window.location.href = 'https://chat.whatsapp.com/F5YWuRVqm0O6D2HqOVgqV9', 2000);
                 } else {
-                    document.getElementById('formMessage').style.display = 'block';
-                    document.getElementById('formMessage').textContent = 'Error submitting the form. Please try again.';
-                    document.getElementById('formMessage').style.color = 'red';
+                    message.textContent = 'Error submitting the form. Please try again.';
+                    message.style.color = 'red';
                 }
-            }).catch(error => {
-                document.getElementById('formMessage').style.display = 'block';
-                document.getElementById('formMessage').textContent = 'Error submitting the form. Please try again.';
-                document.getElementById('formMessage').style.color = 'red';
+            }).catch(() => {
+                const message = document.getElementById('formMessage');
+                message.textContent = 'Error submitting the form. Please try again.';
+                message.style.color = 'red';
             });
         });
     </script>
-
 </body>
 </html>
